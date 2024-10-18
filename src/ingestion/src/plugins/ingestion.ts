@@ -25,7 +25,7 @@ export class IngestionService {
     // Split the text into smaller chunks
     const splitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1500,
-      chunkOverlap: 100,
+      chunkOverlap: 100, // recouvrement pour garder du contexte et ne pas couper les phrasesa au mileu
     });
     const documents = await splitter.splitDocuments(rawDocuments);
 
